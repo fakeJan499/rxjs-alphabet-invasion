@@ -39,6 +39,10 @@ class Game {
   }
 
   startGame(): void {
+    this.state = [];
+    this.score$.next(0);
+    this.speedInMs$.next(550);
+
     this.speedInMs$
       .pipe(
         switchMap((ms: number) =>
